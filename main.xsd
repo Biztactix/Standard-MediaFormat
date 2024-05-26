@@ -13,7 +13,7 @@
   <xs:import namespace="musicvideo" schemaLocation="https://raw.githubusercontent.com/Biztactix/Standard-MediaFormat/main/musicvideo.xsd"/>
 
   <!-- Define the root element and specify type based on content -->
-  <xs:element name="root">
+  <xs:element name="media">
     <xs:complexType>
       <xs:choice>
         <xs:element name="movie" type="movieType" xmlns="movie"/>
