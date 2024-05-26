@@ -43,27 +43,25 @@ The Open NFO File Standard is designed to provide a consistent and comprehensive
 This is an example of how to use the XSDs to reference it so that it's easy for others to understand and apps to extract the content.
 ```
 <?xml version="1.0" encoding="UTF-8"?>
-<media xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:MetadataSchemaLocation="https://raw.githubusercontent.com/Biztactix/Standard-MediaFormat/main/main.xsd">
-  <movie xmlns="movie">
+<media xmlns="TheMediaStandard" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="TheMediaStandard https://raw.githubusercontent.com/Biztactix/Standard-MediaFormat/main/main.xsd">
+
+  <movie>
     <title>Inception</title>
     <originaltitle>Inception</originaltitle>
     <sorttitle>Inception</sorttitle>
     <alternatetitle>Origem</alternatetitle>
     <alternatetitle>Début</alternatetitle>
-    <rating name="imdb" max="10" default="true">
-      <value>8.8</value>
-      <votes>2000000</votes>
-    </rating>
+    <rating name="imdb" max="10" default="true" value="8.8" votes="200000"/>
     <userrating>9.0</userrating>
     <outline>A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.</outline>
     <plot>Dom Cobb is a skilled thief, the absolute best in the dangerous art of extraction: stealing valuable secrets from deep within the subconscious during the dream state when the mind is at its most vulnerable. Cobb's rare ability has made him a coveted player in this treacherous new world of corporate espionage, but it has also made him an international fugitive and cost him everything he has ever loved. Now Cobb is being offered a chance at redemption. One last job could give him his life back but only if he can accomplish the impossible, inception.</plot>
     <tagline>Your mind is the scene of the crime.</tagline>
     <runtime>148</runtime>
-    <thumb>poster.jpg</thumb>
-    <thumb aspect="poster" preview="poster-preview.jpg"/>
-    <fanart>fanart1.jpg</fanart>
-    <fanart>fanart2.jpg</fanart>
-    <contentrating Country="USA" board="MPAA" Rating="PG-13" image="mpaa_pg13.png"/>
+    <banner type="poster" width="300" height="450" url="http://example.com/poster1.jpg"/>
+    <thumb type="thumbnail" width="150" height="150" url="http://example.com/thumb1.jpg"/>
+    <fanart type="thumbnail" width="150" height="150" url="http://example.com/fanart1.jpg"/>
+    <fanart type="thumbnail" width="150" height="150" url="http://example.com/fanart2.jpg"/>    
+    <contentrating country="USA" board="MPAA" rating="PG-13" image="mpaa_pg13.png"/>
     <uniqueid type="imdb" default="true">tt1375666</uniqueid>
     <uniqueid type="tmdb">12345</uniqueid>
     <genre>Action</genre>
