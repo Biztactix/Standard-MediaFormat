@@ -4,11 +4,9 @@
            xmlns="TheMediaStandard"
            elementFormDefault="qualified">
 
-    <xs:complexType name="ratingType">
-        <xs:sequence>
-            <xs:element name="value" type="xs:decimal" minOccurs="1" maxOccurs="1"/>
-            <xs:element name="votes" type="xs:integer" minOccurs="1" maxOccurs="1"/>
-        </xs:sequence>
+     <xs:complexType name="ratingType">
+        <xs:attribute name="value" type="xs:decimal" use="required"/>
+        <xs:attribute name="votes" type="xs:integer" use="optional"/>
         <xs:attribute name="name" type="xs:string" use="required"/>
         <xs:attribute name="max" type="xs:integer" use="optional" default="10"/>
         <xs:attribute name="default" type="xs:boolean" use="optional"/>
