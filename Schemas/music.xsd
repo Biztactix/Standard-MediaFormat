@@ -2,7 +2,6 @@
 <xs:schema elementFormDefault="qualified"
            xmlns:common="common" 
            xmlns:person="person"
-           targetNamespace="music" 
            xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
        <xs:import namespace="common" schemaLocation="https://raw.githubusercontent.com/Biztactix/Standard-MediaFormat/main/Schemas/common.xsd"/>

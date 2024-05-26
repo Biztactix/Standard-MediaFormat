@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="TheMediaStandard"  elementFormDefault="qualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="TheMediaStandard" elementFormDefault="qualified">
     <!-- Import the common XSDs -->
     <xs:import namespace="common" schemaLocation="https://raw.githubusercontent.com/Biztactix/Standard-MediaFormat/main/Schemas/common.xsd"/>
     <xs:import namespace="person" schemaLocation="https://raw.githubusercontent.com/Biztactix/Standard-MediaFormat/main/Schemas/person.xsd"/>
@@ -20,15 +20,15 @@
     <xs:element name="media">
         <xs:complexType>
             <xs:choice>
-                <xs:element name="movie" type="movieType" xmlns="movie"/>
-                <xs:element name="tvshow" type="tvshowType" xmlns="tvshow"/>
-                <xs:element name="adult" type="adultType" xmlns="adult"/>
-                <xs:element name="anime" type="animeType" xmlns="anime"/>
-                <xs:element name="video" type="videoType" xmlns="video"/>
-                <xs:element name="music" type="musicType" xmlns="music"/>
-                <xs:element name="audiobook" type="audiobookType" xmlns="audiobook"/>
-                <xs:element name="podcast" type="podcastType" xmlns="podcast"/>
-                <xs:element name="musicvideo" type="musicVideoType" xmlns="musicvideo"/>
+                <xs:element name="movie" type="movieType"/>
+                <xs:element name="tvshow" type="tvshowType"/>
+                <xs:element name="adult" type="adultType"/>
+                <xs:element name="anime" type="animeType"/>
+                <xs:element name="video" type="videoType"/>
+                <xs:element name="music" type="musicType"/>
+                <xs:element name="audiobook" type="audiobookType"/>
+                <xs:element name="podcast" type="podcastType"/>
+                <xs:element name="musicvideo" type="musicVideoType"/>
             </xs:choice>
         </xs:complexType>
     </xs:element>

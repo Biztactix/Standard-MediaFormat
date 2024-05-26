@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xs:schema elementFormDefault="qualified" xmlns:common="common" 
-           xmlns:person="person" targetNamespace="podcast" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+           xmlns:person="person" xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
        <xs:import namespace="common" schemaLocation="https://raw.githubusercontent.com/Biztactix/Standard-MediaFormat/main/Schemas/common.xsd"/>
     <xs:import namespace="person" schemaLocation="https://raw.githubusercontent.com/Biztactix/Standard-MediaFormat/main/Schemas/person.xsd"/>
