@@ -1,23 +1,27 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="TheMediaStandard" elementFormDefault="qualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+           targetNamespace="TheMediaStandard" 
+           xmlns="TheMediaStandard"
+           elementFormDefault="qualified">
+    
     <!-- Import the common XSDs -->
-    <xs:import namespace="common" schemaLocation="https://raw.githubusercontent.com/Biztactix/Standard-MediaFormat/main/Schemas/common.xsd"/>
-    <xs:import namespace="person" schemaLocation="https://raw.githubusercontent.com/Biztactix/Standard-MediaFormat/main/Schemas/person.xsd"/>
-    <xs:import namespace="library" schemaLocation="https://raw.githubusercontent.com/Biztactix/Standard-MediaFormat/main/Schemas/library.xsd"/>
+    <xs:include schemaLocation="https://raw.githubusercontent.com/Biztactix/Standard-MediaFormat/main/Schemas/common.xsd"/>
+    <xs:include schemaLocation="https://raw.githubusercontent.com/Biztactix/Standard-MediaFormat/main/Schemas/person.xsd"/>
+    <xs:include schemaLocation="https://raw.githubusercontent.com/Biztactix/Standard-MediaFormat/main/Schemas/library.xsd"/>
 
     <!-- Import specific XSDs for different types of content -->
-    <xs:import schemaLocation="https://raw.githubusercontent.com/Biztactix/Standard-MediaFormat/main/Schemas/movie.xsd"/>
-    <xs:import schemaLocation="https://raw.githubusercontent.com/Biztactix/Standard-MediaFormat/main/Schemas/tvshow.xsd"/>
-    <xs:import schemaLocation="https://raw.githubusercontent.com/Biztactix/Standard-MediaFormat/main/Schemas/adult.xsd"/>
-    <xs:import schemaLocation="https://raw.githubusercontent.com/Biztactix/Standard-MediaFormat/main/Schemas/anime.xsd"/>
-    <xs:import schemaLocation="https://raw.githubusercontent.com/Biztactix/Standard-MediaFormat/main/Schemas/video.xsd"/>
-    <xs:import schemaLocation="https://raw.githubusercontent.com/Biztactix/Standard-MediaFormat/main/Schemas/music.xsd"/>
-    <xs:import schemaLocation="https://raw.githubusercontent.com/Biztactix/Standard-MediaFormat/main/Schemas/audiobook.xsd"/>
-    <xs:import schemaLocation="https://raw.githubusercontent.com/Biztactix/Standard-MediaFormat/main/Schemas/podcast.xsd"/>
-    <xs:import schemaLocation="https://raw.githubusercontent.com/Biztactix/Standard-MediaFormat/main/Schemas/musicvideo.xsd"/>
+    <xs:include schemaLocation="https://raw.githubusercontent.com/Biztactix/Standard-MediaFormat/main/Schemas/movie.xsd"/>
+    <xs:include schemaLocation="https://raw.githubusercontent.com/Biztactix/Standard-MediaFormat/main/Schemas/tvshow.xsd"/>
+    <xs:include schemaLocation="https://raw.githubusercontent.com/Biztactix/Standard-MediaFormat/main/Schemas/adult.xsd"/>
+    <xs:include schemaLocation="https://raw.githubusercontent.com/Biztactix/Standard-MediaFormat/main/Schemas/anime.xsd"/>
+    <xs:include schemaLocation="https://raw.githubusercontent.com/Biztactix/Standard-MediaFormat/main/Schemas/video.xsd"/>
+    <xs:include schemaLocation="https://raw.githubusercontent.com/Biztactix/Standard-MediaFormat/main/Schemas/music.xsd"/>
+    <xs:include schemaLocation="https://raw.githubusercontent.com/Biztactix/Standard-MediaFormat/main/Schemas/audiobook.xsd"/>
+    <xs:include schemaLocation="https://raw.githubusercontent.com/Biztactix/Standard-MediaFormat/main/Schemas/podcast.xsd"/>
+    <xs:include schemaLocation="https://raw.githubusercontent.com/Biztactix/Standard-MediaFormat/main/Schemas/musicvideo.xsd"/>
 
     <!-- Define the root element and specify type based on content -->
-    <xs:element name="media">
+    <xs:element name="media" xmlns="TheMediaStandard">
         <xs:complexType>
             <xs:choice>
                 <xs:element name="movie" type="movieType"/>
@@ -27,12 +31,12 @@
                 <xs:element name="video" type="videoType"/>
                 <xs:element name="music" type="musicType"/>
                 <xs:element name="audiobook" type="audiobookType"/>
-                <xs:element name="podcast" type="podcastType"/>
+                <xs:element name="podcast" type="podcastType" />
                 <xs:element name="musicvideo" type="musicVideoType"/>
             </xs:choice>
         </xs:complexType>
     </xs:element>
-    <xs:element name="library" type="metadataType" xmlns="library"/>
-    <xs:element name="stats" type="statsType" xmlns="library"/>
+    <xs:element name="library" type="metadataType"/>
+    <xs:element name="stats" type="statsType"/>
 
 </xs:schema>
