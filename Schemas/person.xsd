@@ -1,5 +1,4 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Liquid Studio (https://www.liquid-technologies.com) -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="person" elementFormDefault="qualified">
 
     <xs:complexType name="personType">
@@ -9,7 +8,9 @@
             <xs:element name="order" type="xs:integer" minOccurs="0" maxOccurs="1"/>
             <xs:element name="thumb" type="xs:string" minOccurs="0" maxOccurs="1"/>
             <xs:element name="bio" type="xs:string" minOccurs="0" maxOccurs="1"/>
-            <xs:element name="url" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="url" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="gender" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="tag" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
 

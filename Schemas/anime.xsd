@@ -1,8 +1,34 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<!-- Created with Liquid Studio (https://www.liquid-technologies.com) -->
-<xs:schema elementFormDefault="qualified" targetNamespace="anime" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema elementFormDefault="qualified" xmlns:common="common" 
+           xmlns:person="person" targetNamespace="anime" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:import namespace="common" schemaLocation="common.xsd"/>
+    <xs:import namespace="person" schemaLocation="person.xsd"/>
+
     <xs:complexType name="animeType">
         <xs:sequence>
+            <xs:element name="title" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="releaseDate" type="xs:date" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="productionCompany" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="genre" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="language" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="season" type="xs:integer" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="episode" type="xs:integer" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="duration" type="xs:integer" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="isAdult" type="xs:integer" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="director" type="person:personType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="voiceActor" type="person:personType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="translationVoice" type="person:personType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="keyword" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="tag" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="description" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="rating" type="common:ratingType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="uniqueId" type="common:uniqueidType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="contentRating" type="common:contentRatingType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="banner" minOccurs="0" maxOccurs="unbounded" type="common:subMediaType"/>
+            <xs:element name="thumb" minOccurs="0" maxOccurs="unbounded" type="common:subMediaType"/>
+            <xs:element name="fanart" minOccurs="0" maxOccurs="unbounded" type="common:subMediaType"/>
+            <xs:element name="links" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
 </xs:schema>

@@ -1,8 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<!-- Created with Liquid Studio (https://www.liquid-technologies.com) -->
-<xs:schema elementFormDefault="qualified" targetNamespace="adult" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema elementFormDefault="qualified"  
+           xmlns:common="common" 
+           xmlns:person="person" 
+           targetNamespace="adult" 
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:import namespace="common" schemaLocation="common.xsd"/>
+    <xs:import namespace="person" schemaLocation="person.xsd"/>
+    
     <xs:complexType name="adultType">
         <xs:sequence>
-            </xs:sequence>
+            <xs:element name="name" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="releaseDate" type="xs:date" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="productionCompany" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="siteName" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="VideoURL" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="TrailerURL" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="duration" type="xs:integer" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="director" type="person:personType"  minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="performer" type="person:personType"  minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="keyword" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="tag" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="link" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="description" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="rating" type="common:ratingType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="uniqueId" type="common:uniqueidType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="thumbnail" type="common:subMediaType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
         </xs:complexType>
 </xs:schema>
