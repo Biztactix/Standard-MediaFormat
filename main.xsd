@@ -28,7 +28,7 @@
                 <xs:element name="music" type="musicType" xmlns="music"/>
                 <xs:element name="audiobook" type="audiobookType" xmlns="audiobook"/>
                 <xs:element name="podcast" type="podcastType" xmlns="podcast"/>
-                <xs:element name="musicvideo" type="musicvideoType" xmlns="musicvideo"/>
+                <xs:element name="musicvideo" type="musicVideoType" xmlns="musicvideo"/>
             </xs:choice>
         </xs:complexType>
     </xs:element>
