@@ -25,78 +25,93 @@ The Open NFO File Standard is designed to provide a consistent and comprehensive
 
 ## File Structure
 
-- `main.xslt`: The master XSLT file that includes or imports other XSLT files based on the content type.
-- `common.xslt`: Contains common templates and styles used across different content types.
-- `movie.xslt`: Specific transformations for movie content.
-- `tvshow.xslt`: Specific transformations for TV show content.
-- `porn.xslt`: Specific transformations for porn video content.
-- `anime.xslt`: Specific transformations for anime content.
+- `main.xsd`: The master XSD file that includes or imports other XSD files based on the content type.
+- `common.xsd`: Contains common custom content types.
+- `person.xsd`: Contains common elements for the person types associated with the content.
+- `movie.xsd`: Specific schema definitions for movie content.
+- `tvshow.xsd`: Specific schema definitions for TV show content.
+- `adult.xsd`: Specific schema definitions for adult video content.
+- `anime.xsd`: Specific schema definitions for anime content.
+- `video.xsd`: Specific schema definitions for general video content.
+- `music.xsd`: Specific schema definitions for music content.
+- `audiobook.xsd`: Specific schema definitions for audiobook content.
+- `podcast.xsd`: Specific schema definitions for podcast content.
+- `musicvideo.xsd`: Specific schema definitions for music video content.
+
 
 ## Example XML File
-This is an example of how to use the XSLTs to reference it so that it's easy for others to understand and apps to extract the content.
+This is an example of how to use the XSDs to reference it so that it's easy for others to understand and apps to extract the content.
 ```
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="https://raw.githubusercontent.com/Biztactix/Standard-MediaFormat/main.xslt"?>
+<media xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:MetadataSchemaLocation="https://raw.githubusercontent.com/Biztactix/Standard-MediaFormat/main/main.xsd">
+  <movie xmlns="movie">
+    <title>Inception</title>
+    <originaltitle>Inception</originaltitle>
+    <sorttitle>Inception</sorttitle>
+    <alternatetitle>Origem</alternatetitle>
+    <alternatetitle>Début</alternatetitle>
+    <rating name="imdb" max="10" default="true">
+      <value>8.8</value>
+      <votes>2000000</votes>
+    </rating>
+    <userrating>9.0</userrating>
+    <outline>A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.</outline>
+    <plot>Dom Cobb is a skilled thief, the absolute best in the dangerous art of extraction: stealing valuable secrets from deep within the subconscious during the dream state when the mind is at its most vulnerable. Cobb's rare ability has made him a coveted player in this treacherous new world of corporate espionage, but it has also made him an international fugitive and cost him everything he has ever loved. Now Cobb is being offered a chance at redemption. One last job could give him his life back but only if he can accomplish the impossible, inception.</plot>
+    <tagline>Your mind is the scene of the crime.</tagline>
+    <runtime>148</runtime>
+    <thumb>poster.jpg</thumb>
+    <thumb aspect="poster" preview="poster-preview.jpg"/>
+    <fanart>fanart1.jpg</fanart>
+    <fanart>fanart2.jpg</fanart>
+    <contentrating Country="USA" board="MPAA" Rating="PG-13" image="mpaa_pg13.png"/>
+    <uniqueid type="imdb" default="true">tt1375666</uniqueid>
+    <uniqueid type="tmdb">12345</uniqueid>
+    <genre>Action</genre>
+    <genre>Sci-Fi</genre>
+    <tag>Heist</tag>
+    <tag>Dream</tag>
+    <setname>Inception Series</setname>
+    <setoverview>Movies about dream extraction.</setoverview>
+    <country>USA</country>
+    <productioncompany>Warner Bros.</productioncompany>
+    <keyword>dream</keyword>
+    <keyword>heist</keyword>
+    <releasedate>2010-07-16</releasedate>
+    <award>Academy Award for Best Cinematography</award>
+    <subtitlelanguage>English</subtitlelanguage>
+    <soundtrack>Inception OST</soundtrack>
+    <parentalguide>Some material may be inappropriate for children under 13.</parentalguide>
+    <actor>
+      <name>Leonardo DiCaprio</name>
+      <role>Dom Cobb</role>
+      <order>1</order>
+      <thumb>leo.jpg</thumb>
+      <bio>Leonardo Wilhelm DiCaprio is an American actor and film producer.</bio>
+      <url>https://www.imdb.com/name/nm0000138/</url>
+    </actor>
+    <actor>
+      <name>Joseph Gordon-Levitt</name>
+      <role>Arthur</role>
+      <order>2</order>
+      <thumb>joseph.jpg</thumb>
+      <bio>Joseph Leonard Gordon-Levitt is an American actor and filmmaker.</bio>
+      <url>https://www.imdb.com/name/nm0330687/</url>
+    </actor>
+    <director>
+      <name>Christopher Nolan</name>
+      <thumb>nolan.jpg</thumb>
+      <bio>Christopher Edward Nolan is a British-American film director, screenwriter, and producer.</bio>
+      <url>https://www.imdb.com/name/nm0634240/</url>
+    </director>
+    <writer>
+      <name>Christopher Nolan</name>
+      <thumb>nolan.jpg</thumb>
+      <bio>Christopher Edward Nolan is a British-American film director, screenwriter, and producer.</bio>
+      <url>https://www.imdb.com/name/nm0634240/</url>
+    </writer>
+  </movie>
+</media>
 
-<movie>
-  <title>Inception</title>
-  <originaltitle>Inception</originaltitle>
-  <sorttitle>Inception</sorttitle>
-  <year>2010</year>
-  <rating>8.8</rating>
-  <votes>2000000</votes>
-  <plot>A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.</plot>
-  <tagline>Your mind is the scene of the crime.</tagline>
-  <runtime>148</runtime>
-  <thumb aspect="poster">poster.jpg</thumb>
-  <fanart>
-    <thumb preview="fanart1.jpg">fanart1.jpg</thumb>
-    <thumb preview="fanart2.jpg">fanart2.jpg</thumb>
-  </fanart>
-  <mpaa>PG-13</mpaa>
-  <playcount>3</playcount>
-  <lastplayed>2024-05-20</lastplayed>
-  <id>tt1375666</id>
-  <uniqueid type="imdb" default="true">tt1375666</uniqueid>
-  <uniqueid type="tmdb">12345</uniqueid>
-  <genre>Action</genre>
-  <genre>Sci-Fi</genre>
-  <country>USA</country>
-  <credits>Christopher Nolan</credits>
-  <director>Christopher Nolan</director>
-  <premiered>2010-07-16</premiered>
-  <studio>Warner Bros.</studio>
-  <trailer>http://example.com/trailer.mp4</trailer>
-  <fileinfo>
-    <streamdetails>
-      <video>
-        <codec>h264</codec>
-        <aspect>2.35</aspect>
-        <width>1920</width>
-        <height>1080</height>
-        <durationinseconds>8880</durationinseconds>
-      </video>
-      <audio>
-        <codec>aac</codec>
-        <language>en</language>
-        <channels>6</channels>
-      </audio>
-      <subtitle>
-        <language>en</language>
-      </subtitle>
-    </streamdetails>
-  </fileinfo>
-  <actor>
-    <name>Leonardo DiCaprio</name>
-    <role>Dom Cobb</role>
-    <thumb>leo.jpg</thumb>
-  </actor>
-  <actor>
-    <name>Joseph Gordon-Levitt</name>
-    <role>Arthur</role>
-    <thumb>joseph.jpg</thumb>
-  </actor>
-</movie>
 ```
 
 ## Contributing
