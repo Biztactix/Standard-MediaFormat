@@ -5,9 +5,9 @@
            targetNamespace="movie"            
            elementFormDefault="qualified">
 
-    <xs:import namespace="common" schemaLocation="common.xsd"/>
-    <xs:import namespace="person" schemaLocation="person.xsd"/>
-
+      <xs:import namespace="common" schemaLocation="https://raw.githubusercontent.com/Biztactix/Standard-MediaFormat/main/Schemas/common.xsd"/>
+    <xs:import namespace="person" schemaLocation="https://raw.githubusercontent.com/Biztactix/Standard-MediaFormat/main/Schemas/person.xsd"/>
+	
     <xs:complexType name="movieType">
         <xs:sequence>
             <xs:element name="title" type="xs:string" minOccurs="1" maxOccurs="1"/>

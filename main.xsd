@@ -1,20 +1,20 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
     <!-- Import the common XSDs -->
-    <xs:import namespace="common" schemaLocation="Schemas/common.xsd"/>
-    <xs:import namespace="person" schemaLocation="Schemas/person.xsd"/>
-    <xs:import namespace="library" schemaLocation="Schemas/library.xsd"/>
+    <xs:import namespace="common" schemaLocation="https://raw.githubusercontent.com/Biztactix/Standard-MediaFormat/main/Schemas/common.xsd"/>
+    <xs:import namespace="person" schemaLocation="https://raw.githubusercontent.com/Biztactix/Standard-MediaFormat/main/Schemas/person.xsd"/>
+    <xs:import namespace="library" schemaLocation="https://raw.githubusercontent.com/Biztactix/Standard-MediaFormat/main/Schemas/library.xsd"/>
 
     <!-- Import specific XSDs for different types of content -->
-    <xs:import namespace="movie" schemaLocation="Schemas/movie.xsd"/>
-    <xs:import namespace="tvshow" schemaLocation="Schemas/tvshow.xsd"/>
-    <xs:import namespace="adult" schemaLocation="Schemas/adult.xsd"/>
-    <xs:import namespace="anime" schemaLocation="Schemas/anime.xsd"/>
-    <xs:import namespace="video" schemaLocation="Schemas/video.xsd"/>
-    <xs:import namespace="music" schemaLocation="Schemas/music.xsd"/>
-    <xs:import namespace="audiobook" schemaLocation="Schemas/audiobook.xsd"/>
-    <xs:import namespace="podcast" schemaLocation="Schemas/podcast.xsd"/>
-    <xs:import namespace="musicvideo" schemaLocation="Schemas/musicvideo.xsd"/>
+    <xs:import namespace="movie" schemaLocation="https://raw.githubusercontent.com/Biztactix/Standard-MediaFormat/main/Schemas/movie.xsd"/>
+    <xs:import namespace="tvshow" schemaLocation="https://raw.githubusercontent.com/Biztactix/Standard-MediaFormat/main/Schemas/tvshow.xsd"/>
+    <xs:import namespace="adult" schemaLocation="https://raw.githubusercontent.com/Biztactix/Standard-MediaFormat/main/Schemas/adult.xsd"/>
+    <xs:import namespace="anime" schemaLocation="https://raw.githubusercontent.com/Biztactix/Standard-MediaFormat/main/Schemas/anime.xsd"/>
+    <xs:import namespace="video" schemaLocation="https://raw.githubusercontent.com/Biztactix/Standard-MediaFormat/main/Schemas/video.xsd"/>
+    <xs:import namespace="music" schemaLocation="https://raw.githubusercontent.com/Biztactix/Standard-MediaFormat/main/Schemas/music.xsd"/>
+    <xs:import namespace="audiobook" schemaLocation="https://raw.githubusercontent.com/Biztactix/Standard-MediaFormat/main/Schemas/audiobook.xsd"/>
+    <xs:import namespace="podcast" schemaLocation="https://raw.githubusercontent.com/Biztactix/Standard-MediaFormat/main/Schemas/podcast.xsd"/>
+    <xs:import namespace="musicvideo" schemaLocation="https://raw.githubusercontent.com/Biztactix/Standard-MediaFormat/main/Schemas/musicvideo.xsd"/>
 
     <!-- Define the root element and specify type based on content -->
     <xs:element name="media">

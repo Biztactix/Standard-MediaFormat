@@ -6,8 +6,8 @@
            targetNamespace="tvshow" 
            elementFormDefault="qualified">
 
-    <xs:import namespace="common" schemaLocation="common.xsd"/>
-    <xs:import namespace="person" schemaLocation="person.xsd"/>
+       <xs:import namespace="common" schemaLocation="https://raw.githubusercontent.com/Biztactix/Standard-MediaFormat/main/Schemas/common.xsd"/>
+    <xs:import namespace="person" schemaLocation="https://raw.githubusercontent.com/Biztactix/Standard-MediaFormat/main/Schemas/person.xsd"/>
 
     <xs:complexType name="tvshowType">
         <xs:sequence>

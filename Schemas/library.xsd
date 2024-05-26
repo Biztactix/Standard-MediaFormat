@@ -5,7 +5,7 @@
             xmlns:common="common" 
            elementFormDefault="qualified">
 
-    <xs:import namespace="common" schemaLocation="common.xsd"/>
+      <xs:import namespace="common" schemaLocation="https://raw.githubusercontent.com/Biztactix/Standard-MediaFormat/main/Schemas/common.xsd"/>
 
     <xs:complexType name="metadataType">
         <xs:sequence>
