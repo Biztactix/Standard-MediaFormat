@@ -1,35 +1,38 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
-  <!-- Import the common XSDs -->
-  <xs:import namespace="common" schemaLocation="https://raw.githubusercontent.com/Biztactix/Standard-MediaFormat/main/common.xsd"/>
-  <xs:import namespace="person" schemaLocation="https://raw.githubusercontent.com/Biztactix/Standard-MediaFormat/main/person.xsd"/>
-  
-  <!-- Import specific XSDs for different types of content -->
-  <xs:import namespace="movie" schemaLocation="https://raw.githubusercontent.com/Biztactix/Standard-MediaFormat/main/movie.xsd"/>
-  <xs:import namespace="tvshow" schemaLocation="https://raw.githubusercontent.com/Biztactix/Standard-MediaFormat/main/tvshow.xsd"/>
-  <xs:import namespace="adult" schemaLocation="https://raw.githubusercontent.com/Biztactix/Standard-MediaFormat/main/adult.xsd"/>
-  <xs:import namespace="anime" schemaLocation="https://raw.githubusercontent.com/Biztactix/Standard-MediaFormat/main/anime.xsd"/>
-  <xs:import namespace="video" schemaLocation="https://raw.githubusercontent.com/Biztactix/Standard-MediaFormat/main/video.xsd"/>
-  <xs:import namespace="music" schemaLocation="https://raw.githubusercontent.com/Biztactix/Standard-MediaFormat/main/music.xsd"/>
-  <xs:import namespace="audiobook" schemaLocation="https://raw.githubusercontent.com/Biztactix/Standard-MediaFormat/main/audiobook.xsd"/>
-  <xs:import namespace="podcast" schemaLocation="https://raw.githubusercontent.com/Biztactix/Standard-MediaFormat/main/podcast.xsd"/>
-  <xs:import namespace="musicvideo" schemaLocation="https://raw.githubusercontent.com/Biztactix/Standard-MediaFormat/main/musicvideo.xsd"/>
+    <!-- Import the common XSDs -->
+    <xs:import namespace="common" schemaLocation="Schemas/common.xsd"/>
+    <xs:import namespace="person" schemaLocation="Schemas/person.xsd"/>
+    <xs:import namespace="library" schemaLocation="Schemas/library.xsd"/>
 
-  <!-- Define the root element and specify type based on content -->
-  <xs:element name="media">
-    <xs:complexType>
-      <xs:choice>
-        <xs:element name="movie" type="movieType" xmlns="movie"/>
-        <xs:element name="tvshow" type="tvshowType" xmlns="tvshow"/>
-        <xs:element name="adult" type="adultType" xmlns="adult"/>
-        <xs:element name="anime" type="animeType" xmlns="anime"/>
-        <xs:element name="video" type="videoType" xmlns="video"/>
-        <xs:element name="music" type="musicType" xmlns="music"/>
-        <xs:element name="audiobook" type="audiobookType" xmlns="audiobook"/>
-        <xs:element name="podcast" type="podcastType" xmlns="podcast"/>
-        <xs:element name="musicvideo" type="musicvideoType" xmlns="musicvideo"/>
-      </xs:choice>
-    </xs:complexType>
-  </xs:element>
+    <!-- Import specific XSDs for different types of content -->
+    <xs:import namespace="movie" schemaLocation="Schemas/movie.xsd"/>
+    <xs:import namespace="tvshow" schemaLocation="Schemas/tvshow.xsd"/>
+    <xs:import namespace="adult" schemaLocation="Schemas/adult.xsd"/>
+    <xs:import namespace="anime" schemaLocation="Schemas/anime.xsd"/>
+    <xs:import namespace="video" schemaLocation="Schemas/video.xsd"/>
+    <xs:import namespace="music" schemaLocation="Schemas/music.xsd"/>
+    <xs:import namespace="audiobook" schemaLocation="Schemas/audiobook.xsd"/>
+    <xs:import namespace="podcast" schemaLocation="Schemas/podcast.xsd"/>
+    <xs:import namespace="musicvideo" schemaLocation="Schemas/musicvideo.xsd"/>
+
+    <!-- Define the root element and specify type based on content -->
+    <xs:element name="media">
+        <xs:complexType>
+            <xs:choice>
+                <xs:element name="movie" type="movieType" xmlns="movie"/>
+                <xs:element name="tvshow" type="tvshowType" xmlns="tvshow"/>
+                <xs:element name="adult" type="adultType" xmlns="adult"/>
+                <xs:element name="anime" type="animeType" xmlns="anime"/>
+                <xs:element name="video" type="videoType" xmlns="video"/>
+                <xs:element name="music" type="musicType" xmlns="music"/>
+                <xs:element name="audiobook" type="audiobookType" xmlns="audiobook"/>
+                <xs:element name="podcast" type="podcastType" xmlns="podcast"/>
+                <xs:element name="musicvideo" type="musicvideoType" xmlns="musicvideo"/>
+            </xs:choice>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="library" type="metadataType" xmlns="library"/>
+    <xs:element name="stats" type="statsType" xmlns="library"/>
 
 </xs:schema>

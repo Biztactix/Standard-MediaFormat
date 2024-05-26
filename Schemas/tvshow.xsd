@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Liquid Studio (https://www.liquid-technologies.com) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+           xmlns:common="common" 
+           xmlns:person="person" 
+           targetNamespace="tvshow" 
+           elementFormDefault="qualified">
+
+    <xs:import namespace="common" schemaLocation="common.xsd"/>
+    <xs:import namespace="person" schemaLocation="person.xsd"/>
+
+    <xs:complexType name="tvshowType">
+        <xs:sequence>
+            <xs:element name="title" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="originaltitle" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="showtitle" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="sorttitle" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="rating" type="common:ratingType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="season" type="xs:integer" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="episode" type="xs:integer" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="altorder" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:simpleContent>
+                        <xs:extension base="xs:string">
+                            <xs:attribute name="altseason" type="xs:integer" use="optional"/>
+                            <xs:attribute name="altepisode" type="xs:integer" use="optional"/>
+                            <xs:attribute name="name" type="xs:string" use="optional"/>
+                        </xs:extension>
+                    </xs:simpleContent>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="plot" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="tagline" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="thumb" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:simpleContent>
+                        <xs:extension base="xs:string">
+                            <xs:attribute name="aspect" type="xs:string" use="optional"/>
+                            <xs:attribute name="type" type="xs:string" use="optional"/>
+                            <xs:attribute name="season" type="xs:integer" use="optional"/>
+                            <xs:attribute name="preview" type="xs:string" use="optional"/>
+                        </xs:extension>
+                    </xs:simpleContent>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="fanart" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:simpleContent>
+                        <xs:extension base="xs:string">
+                            <xs:attribute name="preview" type="xs:string" use="optional"/>
+                        </xs:extension>
+                    </xs:simpleContent>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="contentrating" type="common:contentRatingType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="uniqueid" type="common:uniqueidType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="genre" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="tag" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="premiered" type="xs:date" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="year" type="xs:gYear" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="status" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="studio" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="trailer" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="actor" type="person:personType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="namedseason" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:simpleContent>
+                        <xs:extension base="xs:string">
+                            <xs:attribute name="number" type="xs:integer" use="required"/>
+                        </xs:extension>
+                    </xs:simpleContent>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>
