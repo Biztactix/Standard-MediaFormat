@@ -82,14 +82,8 @@
         <tag>string</tag>
         <tag>string</tag>
         <tag>string</tag>
-        <rating name="string">
-            <value>4807760.2349058</value>
-            <votes>2311</votes>
-        </rating>
-        <rating name="string">
-            <value>4935990.2349058</value>
-            <votes>4777</votes>
-        </rating>
+        <rating name="amazon" value="4.5"/>
+        <rating name="spotify" value="3"/>
         <uniqueId type="string">string</uniqueId>
         <uniqueId type="string">string</uniqueId>
         <uniqueId type="string">string</uniqueId>
